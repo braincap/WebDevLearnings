@@ -4,6 +4,5 @@ Tools
 * Quickly type HTML using Emmet `ul>li.item$*5` [Emmet Cheat Sheet](http://docs.emmet.io/cheat-sheet/)
 
 
-How Tos
+Node
 ===
-  Node
