@@ -29,30 +29,33 @@
   * This tool also injects output script of webpack loader into the html of `output` folder
   * Create `webpack.config.js` in root folder
 
-  ```javascript
-    // In webpack.config.js
+    ```javascript
+        // In webpack.config.js
     var HtmlWebpackPlugin = require('html-webpack-plugin')
-    var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
-    template: __dirname + '/app/index.html',
-    filename: 'index.html',
-    inject: 'body'
+    var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
+        template: __dirname + '/app/index.html',
+        filename: 'index.html',
+        inject: 'body'
     });
+
     module.exports = {
-    entry: [
-        './app/index.js'
-    ],
-    output: {
-        path: __dirname + '/dist',
-        filename: "index_bundle.js"
-    },
-    module: {
-        loaders: [
-        {test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"}
+        entry: [
+            './app/index.js'
+        ],
+        output: {
+            path: __dirname + '/dist',
+            filename: "index_bundle.js"
+        },
+        module: {
+            loaders: [
+                { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader", query: {presets: ['react']} }
+            ]
+        },
+        plugins: [
+            HtmlWebpackPluginConfig
         ]
-    },
-    plugins: [HTMLWebpackPluginConfig]
     };
-  ```
+    ```
   * Babel `npm install --save-dev babel-core babel-loader babel-preset-react` is a loader which also does JSX -> JS transformations. It needs to be added to webpack as one of the loaders.
     * To tell Babel loader that it needs to use React transformation, a `.babelrc` needs to be created in root for that.
 
@@ -64,6 +67,21 @@
         ]
     }
     ```
+
+* ## Summary of required installations in root
+
+  Sequence | Command | Purpose
+  ---------|---------|--------
+  1.| `npm init` | Initialize package.json and /node_modules
+  2.| `npm install jquery --save` | Install any package/module. Same for react and react-dom
+  3.| `npm install webpack` | webpack for bundling
+  4.| `npm install --save-dev html-webpack-plugin` | html plugin to mirror html file with webpack's output script fed in into `<body>`
+  5.| `npm install --save-dev babel-core babel-loader babel-preset-react` | Installs Babel. This is for the JSX -> JS transformation. With Webpack you tell it which transformations to make on your code, while Babel is the specific transformation itself. Sort of mapper vs the thing itself 
+  5.| `webpack.config.js` | Create webpack config file. Code given above
+  6.| `echo '{ "presets": ["react"] }' > .babelrc` | Skip this and use query inside babel module loader
+  7.| `webpack -w` | Keep watching for changes once all above steps are done
+
+
 
 ## Random notes
 
