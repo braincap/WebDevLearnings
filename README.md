@@ -29,6 +29,8 @@
   * This tool also injects output script of webpack loader into the html of `output` folder
   * Create `webpack.config.js` in root folder
 
+&nbsp;
+
     ```javascript
         // In webpack.config.js
     var HtmlWebpackPlugin = require('html-webpack-plugin')
