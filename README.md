@@ -23,10 +23,47 @@
 * NPM solves these issues
 * `npm init` inside the project directory creates `package.json` to keep track and also assists in installing all packages when someone new runs `npm install`
 * `npm install jquery --save` will install jquery. `node_modules` folder gets required modile files and `--save` makes sure `package.json` gets other metadata to track module versions etc
-* Webpack needs to know the `entry` point of your application, needs to know which transformations `module` (like SASS/LESS/CoffeeScript) to make on your code and needs to know to which location `output` it should save the new transformed code
+* Webpack `npm install webpack` needs to know the `entry` point of your application, needs to know which transformations `module` (like SASS/LESS/CoffeeScript) to make on your code and needs to know to which location `output` it should save the new transformed code
   * Dev is done in `/app` folder. Webpack does loader based transformations and spits out processed files in `output` directory which is `dist` in this case for example.
   * To copy `index.html` from `/app` to `/dist` everytime a change occurs as part of dev, use `npm install --save-dev html-webpack-plugin` tool (aka _plugin_)
   * This tool also injects output script of webpack loader into the html of `output` folder
+  * Create `webpack.config.js` in root folder
+
+  ```javascript
+    // In webpack.config.js
+    var HtmlWebpackPlugin = require('html-webpack-plugin')
+    var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
+    template: __dirname + '/app/index.html',
+    filename: 'index.html',
+    inject: 'body'
+    });
+    module.exports = {
+    entry: [
+        './app/index.js'
+    ],
+    output: {
+        path: __dirname + '/dist',
+        filename: "index_bundle.js"
+    },
+    module: {
+        loaders: [
+        {test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"}
+        ]
+    },
+    plugins: [HTMLWebpackPluginConfig]
+    };
+  ```
+  * Babel `npm install --save-dev babel-core babel-loader babel-preset-react` is a loader which also does JSX -> JS transformations. It needs to be added to webpack as one of the loaders.
+    * To tell Babel loader that it needs to use React transformation, a `.babelrc` needs to be created in root for that.
+
+    ```javascript
+    // In .babelrc file. Use (echo '{ "presets": ["react"] }' > .babelrc)
+    {
+        "presets": [
+            "react"
+        ]
+    }
+    ```
 
 ## Random notes
 
