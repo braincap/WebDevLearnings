@@ -16,3 +16,19 @@
     * Use `git clone https://github.com/braincap/existing.git`
 
 ## Node
+
+* Using external libraries/scripts etc through CDN (`<script src='blah blah'></script>` inside `<body>`) is a bad idea because
+  * going to each module's github / website and
+  * keeping track of and updating their versions is painful
+* NPM solves these issues
+* `npm init` inside the project directory creates `package.json` to keep track and also assists in installing all packages when someone new runs `npm install`
+* `npm install jquery --save` will install jquery. `node_modules` folder gets required modile files and `--save` makes sure `package.json` gets other metadata to track module versions etc
+* Webpack needs to know the `entry` point of your application, needs to know which transformations `module` (like SASS/LESS/CoffeeScript) to make on your code and needs to know to which location `output` it should save the new transformed code
+  * Dev is done in `/app` folder. Webpack does loader based transformations and spits out processed files in `output` directory which is `dist` in this case for example.
+  * To copy `index.html` from `/app` to `/dist` everytime a change occurs as part of dev, use `npm install --save-dev html-webpack-plugin` tool (aka _plugin_)
+  * This tool also injects output script of webpack loader into the html of `output` folder
+
+## Random notes
+
+* Imperative (we tell How do) vs Declarative (we tell What to do) code. React it declarative For The Most Part. Part where we do `this.setState` makes it NOT totally declarative. Declarative part of it comes from its components
+* [Javascript Modules](https://medium.freecodecamp.com/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#.fs5jv4a77)
