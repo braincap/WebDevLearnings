@@ -15,5 +15,4 @@
   * Or clone an existing repository that's in github.com into local system for working on it
     * Use `git clone https://github.com/braincap/existing.git`
 
-
 ## Node
