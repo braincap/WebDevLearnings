@@ -81,6 +81,8 @@
   6.| `webpack.config.js` | Create webpack config file. Code given above
   7.| `echo '{ "presets": ["react"] }' > .babelrc` | Skip this and use query inside babel module loader
   8.| `webpack -w` | Keep watching for changes once all above steps are done
+  9.| 'npm install --save-dev html-webpack-plugin webpack webpack-dev-server babel-core babel-loader babel-preset-react' | 1 liner install for dev
+  10.| 'npm install --save react react-dom' | 1 liner install for all env
 
 ## React
 
