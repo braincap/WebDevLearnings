@@ -29,14 +29,13 @@
   * This tool also injects output script of webpack loader into the html of `output` folder
   * Create `webpack.config.js` in root folder
 
-
     ```javascript
     // In webpack.config.js
     var HtmlWebpackPlugin = require('html-webpack-plugin')
     var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
         template: __dirname + '/app/index.html',
         filename: 'index.html',
-        inject: 'body'
+        inject: 'body'
     });
 
     module.exports = {
@@ -77,10 +76,12 @@
   2.| `npm install jquery --save` | Install any package/module. Same for react and react-dom
   3.| `npm install webpack` | webpack for bundling
   4.| `npm install --save-dev html-webpack-plugin` | html plugin to mirror html file with webpack's output script fed in into `<body>`
-  5.| `npm install --save-dev babel-core babel-loader babel-preset-react` | Installs Babel. This is for the JSX -> JS transformation. With Webpack you tell it which transformations to make on your code, while Babel is the specific transformation itself. Sort of mapper vs the thing itself 
+  5.| `npm install --save-dev babel-core babel-loader babel-preset-react` | Installs Babel. This is for the JSX -> JS transformation. With Webpack you tell it which transformations to make on your code, while Babel is the specific transformation itself. Sort of mapper vs the thing itself
   5.| `webpack.config.js` | Create webpack config file. Code given above
   6.| `echo '{ "presets": ["react"] }' > .babelrc` | Skip this and use query inside babel module loader
   7.| `webpack -w` | Keep watching for changes once all above steps are done
+
+## React
 
 
 
