@@ -95,7 +95,15 @@
     <Period />
   </Clock>
  ```
-Above will give an array with 
+ * If a component doesn't have any state, it can also be declared as a "Stateless Functional Component"
+```javascript
+ function HelloWorld (props) {
+  return (
+    <div>Hello {props.name}</div>
+  )
+}
+ReactDOM.render(<HelloWorld name='Tyler' />, document.getElementById('app'))
+```
 
 ## Random notes
 
