@@ -88,6 +88,14 @@
 
 * Pass anything to a component while creation using `<Avatar name="Jai"/>`. Use this name inside Avatar component through `this.props.name`
 * Pure function [f(d)=v] doesn't depend nor change external variables and gives same output for same parameters everytime without depending on any previous state
+* `this.props.children` gives access to element between tags of a component
+```javascript
+  <Clock>
+    <Time />
+    <Period />
+  </Clock>
+ ```
+Above will give an array with 
 
 ## Random notes
 
