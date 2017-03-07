@@ -86,7 +86,7 @@
 
 ## React
 
-
+* Pass anything to a component while creation using `<Avatar name="Jai">`. Use this name inside Avatar component through `this.props.name`
 
 ## Random notes
 
