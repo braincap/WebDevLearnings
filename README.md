@@ -95,6 +95,10 @@
     <Period />
   </Clock>
  ```
+ * ReactRouter activates components based on currect path. For `path='/'`, `{Main}` component is always ALWAYS activated. This can be used for Header/Footer. `IndexRoute` is activated when no other `Route` is activated
+ * `{Main}` is reponsible to display its child routes. Hence main component should have `{this.props.children}` in it
+ * Basic idea: At any one point of time, one path/route is activated. The component in that route becomes the only "children" of {Main} and thus is displayed
+ 
  * If a component doesn't have any state, it can also be declared as a "Stateless Functional Component"
 ```javascript
  function HelloWorld (props) {
@@ -104,6 +108,7 @@
 }
 ReactDOM.render(<HelloWorld name='Tyler' />, document.getElementById('app'))
 ```
+* [`propTypes`](https://facebook.github.io/react/docs/typechecking-with-proptypes.html) ensures typechecking of component's props
 
 ## Random notes
 
