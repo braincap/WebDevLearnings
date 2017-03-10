@@ -14,6 +14,7 @@
     * `git status` anytime keeps checking status of local
   * Or clone an existing repository that's in github.com into local system for working on it
     * Use `git clone https://github.com/braincap/existing.git`
+    * [Host create-react-app in Github Pages](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#github-pages)
 
 ## Node
 
