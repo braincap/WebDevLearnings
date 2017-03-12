@@ -110,6 +110,18 @@
 ReactDOM.render(<HelloWorld name='Tyler' />, document.getElementById('app'))
 ```
 * [`propTypes`](https://facebook.github.io/react/docs/typechecking-with-proptypes.html) ensures typechecking of component's props
+* Use axios for Ajax requests in componentDidMount
+```javascript
+  componentDidMount: function () {
+    axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent')
+      .then(results => {
+        this.setState({
+          recentData: results.data
+        });
+      });
+  },
+```
+
 
 ## Random notes
 
