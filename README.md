@@ -121,7 +121,7 @@ ReactDOM.render(<HelloWorld name='Tyler' />, document.getElementById('app'))
       });
   },
 ```
-
+* React's props and states are passed from parent to child via props. If anything needs transmission from child back to parent, use callback functions. Create function in parent and send them to child via props. Child can call the this.props.passedfunc() which will run like it was run by the parent component. This can not only go to child -> parent but also through multi-level hierarchy. In [Recipe Box project](https://braincap.github.io/recipe_box/), "Edit" button is bound to innermost "Recipe" component. But since we need to change the state of outermost parent as part of the edit, all data from "Edit" form was transmitted Recipe>RecipeList>App using callback functions as props
 
 ## Random notes
 
