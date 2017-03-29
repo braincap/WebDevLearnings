@@ -127,3 +127,4 @@ ReactDOM.render(<HelloWorld name='Tyler' />, document.getElementById('app'))
 
 * Imperative (we tell How do) vs Declarative (we tell What to do) code. React it declarative For The Most Part. Part where we do `this.setState` makes it NOT totally declarative. Declarative part of it comes from its components
 * [Javascript Modules](https://medium.freecodecamp.com/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#.fs5jv4a77)
+* https://docs.nodejitsu.com/
