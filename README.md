@@ -69,6 +69,7 @@
     }
     ```
   * In `package.json`'s `scripts`, add `"start": "webpack-dev-server"`. This enables `npm run start` which does (a) Webpack thing followed by (b) run server for http://localhost:8080/
+  * As of 3/30/2017, node or browser doesn't support `import x from './z'` which is ES6 feature. Use babel in node to compile if needed
 
 * ## Summary of required installations in root
 
