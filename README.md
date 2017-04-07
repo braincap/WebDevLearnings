@@ -15,6 +15,22 @@
   * Or clone an existing repository that's in github.com into local system for working on it
     * Use `git clone https://github.com/braincap/existing.git`
     * [Host create-react-app in Github Pages](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#github-pages)
+* Hosting on Heroku
+
+  Sequence | Command | Purpose
+  ---------|---------|--------
+  1.|Download and install in system|To use in local development
+  2.|`heroku login`|Login into heroku account
+  3.|`heroku create`|Prepares heroku to receive code and add git remote `heroku`
+  4.|`git push heroku master`|Deploys the code to heroku
+  5.|`heroku ps:scale web=1`|Run one instance of the app
+  6.|`heroku open`|Opens the website
+  7.|`heroku logs --tail`|View logs
+  8.|`echo web: node index.js > Procfile`|Procfile is a text file with command to execute when running the app
+  9.|`heroku ps`|Shows running dynos
+  10.|`heroku local web`|Starts the app locally
+  11.|git add>commit>push (as 4)|Push local changes
+
 
 ## Node
 
