@@ -30,7 +30,17 @@
   9.|`heroku ps`|Shows running dynos
   10.|`heroku local web`|Starts the app locally
   11.|git add>commit>push (as 4)|Push local changes
-
+  
+  * Storing credentials securely for mongodb and the likes
+    * Locally for dev and testing (to avoid exposing to public on github)
+      1. Create a .env file in root folder and include `.env` in your `.gitignore`
+      2. Store data like `MONGOLAB_URI="mongodb://username:password@ds157040.mlab.com:57040/shorturl"`
+      3. `npm install dotenv --save`
+      4. `require('dotenv').config()` very early in the code
+      5. Get this value now anywhere in your code using `var url = process.env.MONGOLAB_URI;`
+    * Hosting server (heroku) for production
+      1. Now except storing this in .env file which stayed locally, save this value in server using `heroku config:set MONGOLAB_URI=mongodb://password:password@ds157040.mlab.com:57040/shorturl`
+      2. Rest steps from 3 to 5 are same
 
 ## Node
 
