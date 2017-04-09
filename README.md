@@ -39,7 +39,7 @@
       4. `require('dotenv').config()` very early in the code
       5. Get this value now anywhere in your code using `var url = process.env.MONGOLAB_URI;`
     * Hosting server (heroku) for production
-      1. Now except storing this in .env file which stayed locally, save this value in server using `heroku config:set MONGOLAB_URI=mongodb://password:password@ds157040.mlab.com:57040/shorturl`
+      1. Now except storing this in .env file which stayed locally, save this value in server using `heroku config:set MONGOLAB_URI=mongodb://username:password@ds157040.mlab.com:57040/shorturl`
       2. Rest steps from 3 to 5 are same
 
 ## Node
