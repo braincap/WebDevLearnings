@@ -150,6 +150,17 @@ ReactDOM.render(<HelloWorld name='Tyler' />, document.getElementById('app'))
 ```
 * React's props and states are passed from parent to child via props. If anything needs transmission from child back to parent, use callback functions. Create function in parent and send them to child via props. Child can call the this.props.passedfunc() which will run like it was run by the parent component. This can not only go to child -> parent but also through multi-level hierarchy. In [Recipe Box project](https://braincap.github.io/recipe_box/), "Edit" button is bound to innermost "Recipe" component. But since we need to change the state of outermost parent as part of the edit, all data from "Edit" form was transmitted Recipe>RecipeList>App using callback functions as props
 
+## DigitalOcean VPS configuration
+
+### All these steps as present in DigitalOcean tutorials
+* Created a Droplet which is a virtual cloud based Ubunty machine
+* Installed putty to access this cloud machine from local system
+* Added own user with SSH keys to avoid using root user everytime
+* In namecheap.com, changes nameserver to digitalocean's nameservers
+* In digitalocean domain configuration, added A and CNAME records to point randomcoder.me to droplet's IP address
+* Installed nginx in machine as a webserver
+
+
 ## Random notes
 
 * Imperative (we tell How do) vs Declarative (we tell What to do) code. React it declarative For The Most Part. Part where we do `this.setState` makes it NOT totally declarative. Declarative part of it comes from its components
